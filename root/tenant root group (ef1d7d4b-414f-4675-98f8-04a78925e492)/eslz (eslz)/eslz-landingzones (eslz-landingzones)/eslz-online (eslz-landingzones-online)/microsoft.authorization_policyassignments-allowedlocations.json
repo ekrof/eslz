@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "AllowedLocations",
+      "apiVersion": "2022-06-01",
+      "location": "northeurope",
+      "identity": {
+        "PrincipalId": "953d1ceb-1cfd-4acf-a70d-bac9c25981d2",
+        "TenantId": "ef1d7d4b-414f-4675-98f8-04a78925e492",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "Policy to ringfence Azure regions.",
+        "DisplayName": "Policy to ringfence Azure regions.",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": null,
+        "NotScopes": null,
+        "Parameters": {
+          "listOfAllowedLocations": {
+            "value": [
+              "westeurope",
+              "northeurope"
+            ]
+          }
+        },
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+        "Scope": "/providers/Microsoft.Management/managementGroups/eslz-landingzones-online"
+      }
+    }
+  ],
+  "outputs": {}
+}
