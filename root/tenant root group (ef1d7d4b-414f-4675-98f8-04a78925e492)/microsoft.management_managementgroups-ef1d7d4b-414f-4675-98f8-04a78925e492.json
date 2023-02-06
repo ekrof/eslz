@@ -1,0 +1,65 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Management/managementGroups",
+      "name": "ef1d7d4b-414f-4675-98f8-04a78925e492",
+      "apiVersion": "2021-04-01",
+      "scope": "/",
+      "properties": {
+        "displayName": "Tenant Root Group",
+        "details": {
+          "parent": {
+            "id": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "AzOps-microsoft.management_managementgroups-nested",
+      "location": "[deployment().location]",
+      "properties": {
+        "mode": "Incremental",
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "resources": [
+            {
+              "type": "Microsoft.Management/managementGroups/subscriptions",
+              "apiVersion": "2021-04-01",
+              "name": "ef1d7d4b-414f-4675-98f8-04a78925e492/0e114b6f-9f3e-4648-91dd-8cbf75f36a5d",
+              "scope": "/"
+            },
+            {
+              "type": "Microsoft.Management/managementGroups/subscriptions",
+              "apiVersion": "2021-04-01",
+              "name": "ef1d7d4b-414f-4675-98f8-04a78925e492/46dde140-e891-4dd0-ae9d-2667e2fd48bb",
+              "scope": "/"
+            },
+            {
+              "type": "Microsoft.Management/managementGroups/subscriptions",
+              "apiVersion": "2021-04-01",
+              "name": "ef1d7d4b-414f-4675-98f8-04a78925e492/7f85220e-b1ba-4ca7-9906-fad7450810fe",
+              "scope": "/"
+            }
+          ],
+          "outputs": {}
+        }
+      },
+      "dependsOn": [
+        "Microsoft.Management/managementGroups/ef1d7d4b-414f-4675-98f8-04a78925e492"
+      ]
+    }
+  ],
+  "outputs": {}
+}

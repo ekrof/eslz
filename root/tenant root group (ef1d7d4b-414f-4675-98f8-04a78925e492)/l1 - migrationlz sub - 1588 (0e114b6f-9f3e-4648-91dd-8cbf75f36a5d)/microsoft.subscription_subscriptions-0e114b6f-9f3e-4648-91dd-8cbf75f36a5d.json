@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Management/managementGroups/subscriptions",
+      "name": "ef1d7d4b-414f-4675-98f8-04a78925e492/0e114b6f-9f3e-4648-91dd-8cbf75f36a5d",
+      "apiVersion": "2021-04-01",
+      "scope": "/"
+    }
+  ],
+  "outputs": {}
+}
