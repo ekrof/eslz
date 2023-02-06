@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-SQL-Threat",
+      "apiVersion": "2022-06-01",
+      "location": "centralus",
+      "identity": {
+        "PrincipalId": "4615f88c-73da-4483-bc68-d036af6af2fa",
+        "TenantId": "ef1d7d4b-414f-4675-98f8-04a78925e492",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "This policy ensures that Threat Detection is enabled on SQL Servers.",
+        "DisplayName": "Deploy Threat Detection on SQL servers",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": [],
+        "NotScopes": [],
+        "Parameters": {},
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/36d49e87-48c4-4f2e-beed-ba4ed02b71f5",
+        "Scope": "/providers/Microsoft.Management/managementGroups/eslz-landingzones"
+      }
+    }
+  ],
+  "outputs": {}
+}

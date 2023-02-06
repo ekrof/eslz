@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "name": "819464a9-0aa6-4c4d-9081-fe7701b945b6",
+      "apiVersion": "2022-04-01",
+      "properties": {
+        "DisplayName": null,
+        "ObjectType": "Unknown",
+        "PrincipalId": "6878b464-f3d7-459e-8a7c-9d4e67c02a6a",
+        "RoleDefinitionId": "/providers/Microsoft.Authorization/RoleDefinitions/c7393b34-138c-406f-901b-d8cf2b17e6ae",
+        "RoleDefinitionName": "Managed Application Operator Role"
+      }
+    }
+  ],
+  "outputs": {}
+}
